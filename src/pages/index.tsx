@@ -9,7 +9,6 @@ import type {BookingFormData} from '@/types';
 
 const Home: NextPage = () => {
     const [showBookingForm, setShowBookingForm] = useState(false);
-
     const handleBookingSubmit = async (data: BookingFormData) => {
         try {
             // Format the message for WhatsApp
@@ -21,10 +20,10 @@ New Booking Request!
 📧 Email: ${data.email}
 🏥 Mode: ${data.mode}
 💬 Message: ${data.message}
-      `.trim();
+    `.trim();
 
-            // Create WhatsApp URL
-            const whatsappUrl = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+            // Create WhatsApp URL - using the direct api.whatsapp.com format
+            const whatsappUrl = `https://api.whatsapp.com/send/?phone=${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
 
             // Open WhatsApp in new tab
             window.open(whatsappUrl, '_blank');
