@@ -1,6 +1,8 @@
-# Therapist Website
+# Dr Kshama Pathak Website
 
 A professional website for Ms. Kshama Pathak, Clinical Psychologist, built with Next.js and Tailwind CSS.
+
+## This project is dedicated to AbhiAmu ❤️
 
 ## Features
 
